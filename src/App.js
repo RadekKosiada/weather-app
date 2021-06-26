@@ -2,6 +2,7 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 
 import SingleEntry from "./components/SingleEntries";
+import ActiveEntry from "./components/ActiveEntry";
 
 function App() {
   const [errorMessage, setErrorMessage] = useState("");
@@ -34,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <p className={errorMessage ? "" : "invisible"}>{errorMessage}</p>
-      
+      <ActiveEntry />
       <SingleEntry weatherEntriesArray={entriesArray}/>
     </div>
   );
