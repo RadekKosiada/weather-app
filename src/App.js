@@ -40,7 +40,10 @@ function App() {
       {errorMessage ? <p>{errorMessage}</p> : null}
 
       <ActiveEntry selectedEntry={entriesArray[selectedId]} />
-      <SingleEntries weatherEntriesArray={entriesArray} />
+      <SingleEntries 
+        weatherEntriesArray={entriesArray} 
+        getSelectedEntry={getSelectedEntry}
+      />
     </div>
   );
 }

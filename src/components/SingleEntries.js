@@ -2,8 +2,10 @@ import React from "react";
 
 export default function SingleEntries(props) {
   console.log(props.weatherEntriesArray);
+  
   function handleClick(event) {
     console.log('id: ', event.target.id);
+    props.getSelectedEntry(event.target.id);
   }
   
   return (
