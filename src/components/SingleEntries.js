@@ -7,6 +7,7 @@ export default function SingleEntries(props) {
   }
   
   return (
+    props.weatherEntriesArray ? (
     <div>
       {props.weatherEntriesArray.map((entry, index) => {
         return (
@@ -19,6 +20,6 @@ export default function SingleEntries(props) {
           </div>
         );
       })}
-    </div>
+    </div>) : null
   );
 }
