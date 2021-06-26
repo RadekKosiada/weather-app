@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 import SingleEntry from "./components/SingleEntries";
 import ActiveEntry from "./components/ActiveEntry";
@@ -7,12 +7,15 @@ import ActiveEntry from "./components/ActiveEntry";
 function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [entriesArray, setEntriesArray] = useState([]);
+  const [selectedId, setSelectedId] = useState(0);
 
   const serverError = "There was a server-side problem. Try again later.";
   const connectionError =
     "There is a problem with connection to server. Try again later.";
 
-
+  // const getSelectedEntry = useCallback((id) => {
+  //   setSelectedId(id);
+  // });
 
   useEffect(() => {
     fetch("/weather-data")
@@ -24,7 +27,7 @@ function App() {
         if (jsonResponse.code === "404") {
           setErrorMessage(serverError);
         } else {
-          setEntriesArray(jsonResponse.data)
+          setEntriesArray(jsonResponse.data);
         }
       })
       .catch((error) => {
@@ -34,9 +37,10 @@ function App() {
 
   return (
     <div className="App">
-      <p className={errorMessage ? "" : "invisible"}>{errorMessage}</p>
-      <ActiveEntry />
-      <SingleEntry weatherEntriesArray={entriesArray}/>
+      {errorMessage ? <p>{errorMessage}</p> : null}
+
+      <ActiveEntry selectedEntry={entriesArray[selectedId]} />
+      <SingleEntry weatherEntriesArray={entriesArray} />
     </div>
   );
 }
