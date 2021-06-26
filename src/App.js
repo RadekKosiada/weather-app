@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect, useCallback } from "react";
 
-import SingleEntry from "./components/SingleEntries";
+import SingleEntries from "./components/SingleEntries";
 import ActiveEntry from "./components/ActiveEntry";
 
 function App() {
@@ -13,9 +13,9 @@ function App() {
   const connectionError =
     "There is a problem with connection to server. Try again later.";
 
-  // const getSelectedEntry = useCallback((id) => {
-  //   setSelectedId(id);
-  // });
+  const getSelectedEntry = useCallback((id) => {
+    setSelectedId(id);
+  });
 
   useEffect(() => {
     fetch("/weather-data")
@@ -40,7 +40,7 @@ function App() {
       {errorMessage ? <p>{errorMessage}</p> : null}
 
       <ActiveEntry selectedEntry={entriesArray[selectedId]} />
-      <SingleEntry weatherEntriesArray={entriesArray} />
+      <SingleEntries weatherEntriesArray={entriesArray} />
     </div>
   );
 }
