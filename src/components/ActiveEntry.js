@@ -10,7 +10,7 @@ export default function ActiveEntry(props) {
   console.log(props.selectedEntry);
   const entry = props.selectedEntry;
   return entry ? (
-    <div>
+    <div className="active-entry-container">
       <p>{displayTime(entry.dt_txt)}</p>
       <p className="active-entry-weekday">{displayWeekDay(entry.dt_txt)}</p>
       <p className="active-entry-date">{displayDate(entry.dt_txt)}</p>
