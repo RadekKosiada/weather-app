@@ -1,5 +1,6 @@
 import React from "react";
 import displayTime from "../helpers/date";
+import displayTemp from "../helpers/temp";
 
 export default function SingleEntries(props) {
   console.log(props.weatherEntriesArray);
@@ -19,7 +20,7 @@ export default function SingleEntries(props) {
             <p>{entry.weather[0].icon}</p>
             <p>{entry.weather[0].main}</p>
             <p>{entry.weather[0].description}</p>
-            <p className="weather-entry-temp">{entry.main.temp}</p>
+            <p className="weather-entry-temp">{displayTemp(entry.main.temp)}</p>
           </div>
         );
       })}

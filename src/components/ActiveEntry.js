@@ -1,5 +1,6 @@
 import React from "react";
 import displayTime from "../helpers/date";
+import displayTemp from "../helpers/temp";
 
 export default function ActiveEntry(props) {
   console.log(props.selectedEntry);
@@ -11,7 +12,7 @@ export default function ActiveEntry(props) {
       <p>{entry.weather[0].icon}</p>
       <p>{entry.weather[0].main}</p>
       <p>{entry.weather[0].description}</p>
-      <p>{entry.main.temp}</p>
+      <p>{displayTemp(entry.main.temp)}</p>
     </div>
     ) : null
     
