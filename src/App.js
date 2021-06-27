@@ -1,4 +1,5 @@
-import "./App.css";
+import "./styles/App.min.css";
+
 import React, { useState, useEffect, useCallback } from "react";
 
 import SingleEntries from "./components/SingleEntries";
@@ -40,8 +41,8 @@ function App() {
       {errorMessage ? <p>{errorMessage}</p> : null}
 
       <ActiveEntry selectedEntry={entriesArray[selectedId]} />
-      <SingleEntries 
-        weatherEntriesArray={entriesArray} 
+      <SingleEntries
+        weatherEntriesArray={entriesArray}
         getSelectedEntry={getSelectedEntry}
       />
     </div>
