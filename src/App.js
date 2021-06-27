@@ -38,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-      {errorMessage ? <p>{errorMessage}</p> : null}
+      {errorMessage ? <p className="error-message">{errorMessage}</p> : null}
 
       <ActiveEntry selectedEntry={entriesArray[selectedId]} />
       <SingleEntries
