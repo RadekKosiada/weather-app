@@ -14,11 +14,11 @@ export default function SingleEntries(props) {
       {props.weatherEntriesArray.map((entry, index) => {
         return (
           <div key={index} id={index} className="weather-entry" onClick={handleClick}>
-            <p>{entry.dt_txt}</p>
+            <p className="weather-entry-time">{entry.dt_txt}</p>
             <p>{entry.weather[0].icon}</p>
             <p>{entry.weather[0].main}</p>
             <p>{entry.weather[0].description}</p>
-            <p>{entry.main.temp}</p>
+            <p className="weather-entry-temp">{entry.main.temp}</p>
           </div>
         );
       })}
