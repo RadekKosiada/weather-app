@@ -1,10 +1,52 @@
+.active-entry-container {
+  display: grid;
+  grid-template-columns: 25% 25% 25%;
+  grid-gap: 5%;
+  padding: $main-padding;
+}
+
+p {
+  margin: unset;
+}
+.active-entry-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+}
+
+.active-entry-container div {
+  min-width: 30%;
+}
+
 .active-entry-temp,
 .active-entry-date,
 .active-entry-weekday {
   color: $text-color-white;
+  font-family: 'Roboto-Bold';
 }
 
 .active-entry-description,
-.active-entry-main {
+.active-entry-main,
+.active-entry-location {
   color: $text-color-grey;
+  font-family: 'Roboto-Regular';
+  font-size:20px;
+}
+
+.active-entry-temp {
+  font-size: 100px;
+  text-align: center;
+}
+
+.active-entry-location {
+  text-align: left;
+}
+.active-entry-date,
+.active-entry-weekday {
+  font-size: 40px;
+  text-align: left;
+}
+
+.active-entry-container img {
+  width: 150px;
 }

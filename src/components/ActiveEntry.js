@@ -1,5 +1,4 @@
 import React from "react";
-import displayTime from "../helpers/time";
 import displayTemp from "../helpers/temp";
 import displayWeekDay from "../helpers/weekDay";
 import displayDate from "../helpers/date";
@@ -21,16 +20,20 @@ export default function ActiveEntry(props) {
         }
       />
       <div>
-        <p className="active-entry-main">{entry.weather[0].main}</p>
+        <div className="active-entry-main">
+          <p>{entry.weather[0].main}</p> 
+          {/* 12° / 2° is just a placeholder for now*/}
+          <p>12° / 2°</p>
+        </div>
+
         <p className="active-entry-temp">{displayTemp(entry.main.temp)}°</p>
-        <p className="active-entry-description">
-          {entry.weather[0].description}
-        </p>
       </div>
-      <div>
-        <p>{displayTime(entry.dt_txt)}</p>
+      <div className="">
+        <p className="active-entry-location">Munich</p>
         <p className="active-entry-weekday">{displayWeekDay(entry.dt_txt)}</p>
-        <p className="active-entry-date">{displayDate(entry.dt_txt)}. {displayMonth(entry.dt_txt)}</p>
+        <p className="active-entry-date">
+          {displayDate(entry.dt_txt)}. {displayMonth(entry.dt_txt)}
+        </p>
       </div>
     </div>
   ) : null;
