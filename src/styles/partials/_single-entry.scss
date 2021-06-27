@@ -19,7 +19,7 @@
   margin: 10px;
 }
 
-.weather-entry:hover {
+.weather-entry:not(.active):hover {
   background-color: $bg-color-hover;
   cursor: pointer;
 }
