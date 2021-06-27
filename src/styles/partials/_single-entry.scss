@@ -3,6 +3,20 @@
   display: inline-block;
   padding: 5px;
   margin: 5px;
+  border-radius: 6px;
+  padding: 32px 0;
+}
+
+.weather-entry:hover {
+  background-color: $bg-color-hover;
+}
+
+.weather-entry-time {
+  color: $text-color-grey;
+}
+
+.weather-entry-temp {
+  color: $text-color-white;
 }
 
 .weather-entry p {
