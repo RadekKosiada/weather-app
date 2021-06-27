@@ -11,11 +11,6 @@ export default function ActiveEntry(props) {
   const entry = props.selectedEntry;
   return entry ? (
     <div className="active-entry-container">
-      <p>{displayTime(entry.dt_txt)}</p>
-      <p className="active-entry-weekday">{displayWeekDay(entry.dt_txt)}</p>
-      <p className="active-entry-date">{displayDate(entry.dt_txt)}</p>
-      <p>{entry.weather[0].icon}</p>
-      <p className="active-entry-main">{entry.weather[0].main}</p>
       <img
         src={entry.weather[0].main === "Clear" ? iconSun : iconCloudy}
         alt={
@@ -24,8 +19,18 @@ export default function ActiveEntry(props) {
             : "sun behind cloud icon"
         }
       />
-      <p className="active-entry-description">{entry.weather[0].description}</p>
-      <p className="active-entry-temp">{displayTemp(entry.main.temp)}°</p>
+      <div>
+        <p className="active-entry-main">{entry.weather[0].main}</p>
+        <p className="active-entry-temp">{displayTemp(entry.main.temp)}°</p>
+        <p className="active-entry-description">
+          {entry.weather[0].description}
+        </p>
+      </div>
+      <div>
+        <p>{displayTime(entry.dt_txt)}</p>
+        <p className="active-entry-weekday">{displayWeekDay(entry.dt_txt)}</p>
+        <p className="active-entry-date">{displayDate(entry.dt_txt)}</p>
+      </div>
     </div>
   ) : null;
 }
