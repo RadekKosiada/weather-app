@@ -24,7 +24,6 @@ function App() {
         return response.json();
       })
       .then((jsonResponse) => {
-        console.log(jsonResponse);
         if (jsonResponse.code === "404") {
           setErrorMessage(serverError);
         } else {

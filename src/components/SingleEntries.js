@@ -5,8 +5,8 @@ import iconSun from "../icons/weather-sun.svg";
 import iconCloudy from "../icons/weather-cloud.svg";
 
 export default function SingleEntries(props) {
+  
   function handleClick(event) {
-    console.log("id: ", event.target.id, event.target);
     props.getSelectedEntry(event.target.id);
   }
 

@@ -7,8 +7,9 @@ import iconSun from "../icons/weather-sun.svg";
 import iconCloudy from "../icons/weather-cloud.svg";
 
 export default function ActiveEntry(props) {
-  console.log(props.selectedEntry);
+  
   const entry = props.selectedEntry;
+
   return entry ? (
     <div className="active-entry-container">
       <img
@@ -21,8 +22,11 @@ export default function ActiveEntry(props) {
       />
       <div>
         <div className="active-entry-main">
-          <p>{entry.weather[0].main}</p> 
-          <p>{displayTemp(entry.main.temp_min)}° / {displayTemp(entry.main.temp_max)}°</p>
+          <p>{entry.weather[0].main}</p>
+          <p>
+            {displayTemp(entry.main.temp_min)}° /{" "}
+            {displayTemp(entry.main.temp_max)}°
+          </p>
         </div>
 
         <p className="active-entry-temp">{displayTemp(entry.main.temp)}°</p>
