@@ -11,12 +11,12 @@ export default function ActiveEntry(props) {
     entry ? (
       <div>
       <p>{displayTime(entry.dt_txt)}</p>
-      <p>{displayWeekDay(entry.dt_txt)}</p>
-      <p>{displayDate(entry.dt_txt)}</p>
+      <p className="active-entry-weekday">{displayWeekDay(entry.dt_txt)}</p>
+      <p className="active-entry-date">{displayDate(entry.dt_txt)}</p>
       <p>{entry.weather[0].icon}</p>
-      <p>{entry.weather[0].main}</p>
-      <p>{entry.weather[0].description}</p>
-      <p>{displayTemp(entry.main.temp)}</p>
+      <p className="active-entry-main">{entry.weather[0].main}</p>
+      <p className="active-entry-description">{entry.weather[0].description}</p>
+      <p className="active-entry-temp">{displayTemp(entry.main.temp)}°</p>
     </div>
     ) : null
     
