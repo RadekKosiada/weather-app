@@ -1,8 +1,11 @@
 .active-entry-container {
+  width: 80%;
   display: grid;
-  grid-template-columns: 25% 25% 25%;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 5%;
-  padding: $main-padding;
+  padding: 5vw;
+  position: relative;
+  margin: 0 auto;
 }
 
 p {
@@ -30,11 +33,11 @@ p {
 .active-entry-location {
   color: $text-color-grey;
   font-family: 'Roboto-Regular', Arial, Helvetica, sans-serif;
-  font-size:20px;
+  font-size: 2vw;
 }
 
 .active-entry-temp {
-  font-size: 100px;
+  font-size: 10vw;
   text-align: center;
 }
 
@@ -43,12 +46,12 @@ p {
 }
 .active-entry-date,
 .active-entry-weekday {
-  font-size: 40px;
+  font-size: 4vw;
   text-align: left;
 }
 
 .active-entry-container img {
-  width: 150px;
+  width: 14vw;
   position: relative;
   margin: 0 auto;
 }
