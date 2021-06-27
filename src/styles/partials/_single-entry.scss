@@ -3,6 +3,10 @@
   width: 100%;
 }
 
+.active { 
+  background-color: $bg-color-active;
+}
+
 .weather-entry {
   display: inline-block;
   padding: 5px;

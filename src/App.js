@@ -16,7 +16,7 @@ function App() {
 
   const getSelectedEntry = useCallback((id) => {
     setSelectedId(id);
-  });
+  }, []);
 
   useEffect(() => {
     fetch("/weather-data")
@@ -42,6 +42,7 @@ function App() {
 
       <ActiveEntry selectedEntry={entriesArray[selectedId]} />
       <SingleEntries
+        selectedId={selectedId}
         weatherEntriesArray={entriesArray}
         getSelectedEntry={getSelectedEntry}
       />

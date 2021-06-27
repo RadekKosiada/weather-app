@@ -5,10 +5,8 @@ import iconSun from "../icons/weather-sun.svg";
 import iconCloudy from "../icons/weather-cloud.svg";
 
 export default function SingleEntries(props) {
-  console.log(props.weatherEntriesArray);
-
   function handleClick(event) {
-    console.log("id: ", event.target.id);
+    console.log("id: ", event.target.id, event.target);
     props.getSelectedEntry(event.target.id);
   }
 
@@ -19,7 +17,9 @@ export default function SingleEntries(props) {
           <div
             key={index}
             id={index}
-            className="weather-entry"
+            className={`weather-entry ${
+              Number(props.selectedId) === Number(index) ? "active" : ""
+            }`}
             onClick={handleClick}
           >
             <p className="weather-entry-time">{displayTime(entry.dt_txt)}</p>
@@ -31,7 +31,9 @@ export default function SingleEntries(props) {
                   : "sun behind cloud icon"
               }
             />
-            <p className="weather-entry-temp">{displayTemp(entry.main.temp)}°</p>
+            <p className="weather-entry-temp">
+              {displayTemp(entry.main.temp)}°
+            </p>
           </div>
         );
       })}
