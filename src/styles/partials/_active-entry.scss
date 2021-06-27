@@ -22,14 +22,14 @@ p {
 .active-entry-date,
 .active-entry-weekday {
   color: $text-color-white;
-  font-family: 'Roboto-Bold';
+  font-family: 'Roboto-Bold', Arial, Helvetica, sans-serif;
 }
 
 .active-entry-description,
 .active-entry-main,
 .active-entry-location {
   color: $text-color-grey;
-  font-family: 'Roboto-Regular';
+  font-family: 'Roboto-Regular', Arial, Helvetica, sans-serif;
   font-size:20px;
 }
 
