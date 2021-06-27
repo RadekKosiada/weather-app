@@ -2,6 +2,7 @@ import React from "react";
 import displayTime from "../helpers/time";
 import displayTemp from "../helpers/temp";
 import displayWeekDay from "../helpers/weekDay";
+import displayDate from "../helpers/date";
 
 export default function ActiveEntry(props) {
   console.log(props.selectedEntry);
@@ -11,6 +12,7 @@ export default function ActiveEntry(props) {
       <div>
       <p>{displayTime(entry.dt_txt)}</p>
       <p>{displayWeekDay(entry.dt_txt)}</p>
+      <p>{displayDate(entry.dt_txt)}</p>
       <p>{entry.weather[0].icon}</p>
       <p>{entry.weather[0].main}</p>
       <p>{entry.weather[0].description}</p>
