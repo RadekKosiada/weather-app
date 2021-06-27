@@ -3,7 +3,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 5%;
-  padding: 5vw;
+  // padding: 5vw 5vw 0 5vw;
+  padding: 50px 50px 0 50px;
   position: relative;
   margin: 0 auto;
 }
@@ -33,7 +34,7 @@ p {
 .active-entry-location {
   color: $text-color-grey;
   font-family: 'Roboto-Regular', Arial, Helvetica, sans-serif;
-  font-size: 2vw;
+  font-size: $small-text-size;
 }
 
 .active-entry-temp {
