@@ -1,5 +1,5 @@
 import React from "react";
-import displayTime from "../helpers/date";
+import displayTime from "../helpers/time";
 import displayTemp from "../helpers/temp";
 
 export default function SingleEntries(props) {
