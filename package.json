@@ -24,7 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-css": "node-sass -w src/styles/App.scss src/styles/App.min.css --output-style compressed"
+    "build-css": "node-sass -w src/styles/index.scss src/styles/index.min.css --output-style compressed"
   },
   "eslintConfig": {
     "extends": [

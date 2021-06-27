@@ -1,4 +1,4 @@
-import "./styles/App.min.css";
+import "./styles/index.min.css";
 
 import React, { useState, useEffect, useCallback } from "react";
 
