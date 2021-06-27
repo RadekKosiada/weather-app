@@ -13,7 +13,7 @@ export default function SingleEntries(props) {
   }
 
   return props.weatherEntriesArray ? (
-    <div>
+    <div className="weather-entries-container">
       {props.weatherEntriesArray.map((entry, index) => {
         return (
           <div
@@ -31,7 +31,7 @@ export default function SingleEntries(props) {
                   : "sun behind cloud icon"
               }
             />
-            <p className="weather-entry-temp">{displayTemp(entry.main.temp)}</p>
+            <p className="weather-entry-temp">{displayTemp(entry.main.temp)}°</p>
           </div>
         );
       })}
