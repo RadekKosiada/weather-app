@@ -24,8 +24,8 @@ export default function ActiveEntry(props) {
         <div className="active-entry-main">
           <p>{entry.weather[0].main}</p>
           <p>
-            {displayTemp(entry.main.temp_min)}° /{" "}
-            {displayTemp(entry.main.temp_max)}°
+            {props.lowestTemp}° /{" "}
+            {props.highestTemp}°
           </p>
         </div>
 
