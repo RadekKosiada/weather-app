@@ -23,7 +23,6 @@ export default function SingleEntries(props) {
             onClick={handleClick}
           >
             <p className="weather-entry-time">{displayTime(entry.dt_txt)}</p>
-            <p>{entry.weather[0].icon}</p>
             <img
               src={entry.weather[0].main === "Clear" ? iconSun : iconCloudy}
               alt={
@@ -32,7 +31,6 @@ export default function SingleEntries(props) {
                   : "sun behind cloud icon"
               }
             />
-            <p>{entry.weather[0].description}</p>
             <p className="weather-entry-temp">{displayTemp(entry.main.temp)}</p>
           </div>
         );
