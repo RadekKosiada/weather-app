@@ -3,6 +3,7 @@ import displayTime from "../helpers/time";
 import displayTemp from "../helpers/temp";
 import displayWeekDay from "../helpers/weekDay";
 import displayDate from "../helpers/date";
+import displayMonth from "../helpers/month";
 import iconSun from "../icons/weather-sun.svg";
 import iconCloudy from "../icons/weather-cloud.svg";
 
@@ -29,7 +30,7 @@ export default function ActiveEntry(props) {
       <div>
         <p>{displayTime(entry.dt_txt)}</p>
         <p className="active-entry-weekday">{displayWeekDay(entry.dt_txt)}</p>
-        <p className="active-entry-date">{displayDate(entry.dt_txt)}</p>
+        <p className="active-entry-date">{displayDate(entry.dt_txt)}. {displayMonth(entry.dt_txt)}</p>
       </div>
     </div>
   ) : null;

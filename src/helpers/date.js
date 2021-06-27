@@ -1,5 +1,5 @@
 function displayDate(string) {
-  let optionsForDate = {month: 'long', day: 'numeric' };
+  let optionsForDate = {day: 'numeric' };
   
   const date = new Date(string).toLocaleDateString('en-GB', optionsForDate);
 
