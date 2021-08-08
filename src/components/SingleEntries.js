@@ -15,6 +15,7 @@ export default function SingleEntries(props) {
       {props.weatherEntriesArray.map((entry, index) => {
         return (
           <div
+            role="button"
             key={index}
             id={index}
             className={`weather-entry ${
