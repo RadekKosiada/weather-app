@@ -7,6 +7,8 @@ import ActiveEntry from "./components/ActiveEntry";
 
 import getTemperatures from "./helpers/getTemperatures";
 
+const DEBUG = true;
+
 function App() {
   const [errorMessage, setErrorMessage] = useState("");
   const [entriesArray, setEntriesArray] = useState([]);
@@ -17,6 +19,8 @@ function App() {
   const serverError = "There was a server-side problem. Try again later.";
   const connectionError =
     "There is a problem with connection to server. Try again later.";
+
+
 
   const getSelectedEntry = useCallback((id) => {
     setSelectedId(id);
@@ -34,7 +38,8 @@ function App() {
           setEntriesArray(jsonResponse.data);
           setLowestTemp(getTemperatures(selectedId, jsonResponse.data)[0]);
           setHighestTemp(getTemperatures(selectedId, jsonResponse.data)[1]);
-
+          DEBUG && console.log('error message to empty string');
+          setErrorMessage('');
         }
       })
       .catch((error) => {
