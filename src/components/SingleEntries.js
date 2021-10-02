@@ -4,8 +4,9 @@ import displayTemp from "../helpers/temp";
 import iconSun from "../icons/weather-sun.svg";
 import iconCloudy from "../icons/weather-cloud.svg";
 
+import Image from "./Image";
+
 export default function SingleEntries(props) {
-  
   function handleClick(event) {
     props.getSelectedEntry(event.target.id);
   }
@@ -23,7 +24,8 @@ export default function SingleEntries(props) {
             onClick={handleClick}
           >
             <p className="weather-entry-time">{displayTime(entry.dt_txt)}</p>
-            <img
+
+            <Image
               src={entry.weather[0].main === "Clear" ? iconSun : iconCloudy}
               alt={
                 entry.weather[0].main === "Clear"
@@ -31,6 +33,7 @@ export default function SingleEntries(props) {
                   : "sun behind cloud icon"
               }
             />
+
             <p className="weather-entry-temp">
               {displayTemp(entry.main.temp)}°
             </p>

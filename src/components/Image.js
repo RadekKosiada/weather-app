@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 export default function Image(props) {
   return (
-    <div>
+    <div className="image-container">
       <img src={props.src} alt={props.alt} />
     </div>
   )
