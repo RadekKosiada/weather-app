@@ -6,13 +6,14 @@ import displayMonth from "../helpers/month";
 import iconSun from "../icons/weather-sun.svg";
 import iconCloudy from "../icons/weather-cloud.svg";
 
+import Image from "./Image";
+
 export default function ActiveEntry(props) {
-  
   const entry = props.selectedEntry;
 
   return entry ? (
     <div className="active-entry-container">
-      <img
+      <Image
         src={entry.weather[0].main === "Clear" ? iconSun : iconCloudy}
         alt={
           entry.weather[0].main === "Clear"
@@ -24,8 +25,7 @@ export default function ActiveEntry(props) {
         <div className="active-entry-main">
           <p>{entry.weather[0].main}</p>
           <p>
-            {props.lowestTemp}° /{" "}
-            {props.highestTemp}°
+            {props.lowestTemp}° / {props.highestTemp}°
           </p>
         </div>
 
